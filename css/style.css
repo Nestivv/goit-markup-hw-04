@@ -1,0 +1,425 @@
+/* /все основные цвета в проекте */
+:root {
+  --text-footer-primary: #ffffff;
+  --text-footer-secondary: rgba(255, 255, 255, 0.6);
+
+  --text-main-primary: #212121;
+  --text-main-secondary: #757575;
+
+  --text-accent-primary: #2196f3;
+  --text-accent-secondary: #fff;
+
+  --text-footer-logo: #ffffff;
+  --text-header-logo: #000000;
+
+  --background-main: #fff;
+  --background-hero-footer: #2f303a;
+  --background-team: #f5f4fa;
+  --background-hero-button: #2196f3;
+  --background-hover-hero-button: #188ce8;
+  --main-hover-color: #2196f3;
+  --background-member-card: #fff;
+
+  --border-color: #ececec;
+
+  /* / цвета для страницы портфолио */
+  --portfolio-button-background: #f5f4fa;
+  --portfolio-card-border: #eeeeee;
+  --portfolio-card-background: #fff;
+}
+.body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--text-main-secondary);
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-main);
+}
+
+/* /скрывает заголовки секций */
+.hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+/* /сбрасываем стиль списка */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* /сбрасываем стиль ссылок */
+.header a,
+.footer a,
+.portfolio a {
+  text-decoration: none;
+  color:inherit;
+}
+
+/* /применяем общие шрифты к всему хедеру */
+.header {
+padding-top: 24px;
+padding-bottom: 24px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* /шрифты для лого применяется сразу к футеру и хедеру */
+.header .logo-link,
+.footer .logo-link {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--text-accent-primary);
+}
+
+/* /применение второго цвета к части логотипа в хедере */
+.header .logo-color {
+  color: var(--text-header-logo);
+}
+
+/* /задаем цвет ссылок на список страниц */
+.page-link {
+  color: var(--text-main-primary);
+}
+
+/* /цвет ссылок на телефо и почту в хедере */
+.header-contacts .mail,
+.header-contacts .phone {
+  color: var(--text-main-secondary);
+}
+
+.header .container,
+.header .navigation,
+.header .header-contacts {
+  display: flex;
+  align-items: center;
+}
+
+.header .pages-list {
+  display: flex;
+  margin-left: 93px;
+}
+
+.pages-list .item:not(:last-child){
+  margin-right: 50px;
+}
+.header-contacts {
+  margin-left: auto;
+}
+.header-contacts .item:last-child {
+  margin-left: 50px;
+}
+
+/* /прописываем наведение для ссылок */
+.page-link:hover,
+.header-contacts .mail:hover,
+.header-contacts .phone:hover,
+.footer-contacts .mail:hover,
+.footer-contacts .phone:hover {
+  color: var(--main-hover-color);
+}
+
+.page-link:focus,
+.header-contacts .mail:focus,
+.header-contacts .phone:focus,
+.footer-contacts .mail:focus,
+.footer-contacts .phone:focus {
+  color: var(--main-hover-color);
+}
+
+/* //стили к мейн */
+/* /описание секции герой */
+.hero {
+  padding: 200px 0;
+  background-color: var(--background-hero-footer);
+  text-align: center;
+  /* height: 600px; */
+}
+
+.hero .title {
+  margin: 0 auto;
+  width: 696px;
+
+  color: var(--text-accent-secondary);
+
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+/* /стили к кнопке в герое */
+.hero-button {
+  margin-top: 30px;
+  padding: 10px 32px;
+  border-radius: 4px;
+  border: none;
+
+  color: var(--text-accent-secondary);
+  background-color: var(--background-hero-button);
+
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  font-family: inherit;
+}
+
+.hero-button:focus,
+.hero-button:hover {
+  color: var(--text-accent-secondary);
+  background-color: var(--background-hover-hero-button);
+}
+/* /стили секции наши преимущества */
+.features .features-title {
+  font-size: inherit;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--text-main-primary);
+}
+
+.features .list {
+  display: flex;
+}
+
+.features .item:not(:first-child) {
+  margin-left: 30px;
+}
+
+.features .features-title {
+  margin-bottom: 10px;
+}
+
+.features .item{
+  width: 270px;
+}
+
+/* /стили к секции чем мы занимаемся */
+.our-description .description-title {
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--text-main-primary);
+}
+
+.our-description .description-list {
+  display: flex;
+}
+
+.description-list .item:not(:last-child){
+  margin-right: 30px;
+}
+
+.our-description {
+  padding-bottom: 94px;
+}
+
+/* /стили для секции наша команда */
+.team {
+  background-color: var(--background-team);
+}
+.team .team-member {
+  background-color: var(--background-member-card);
+}
+.team-title {
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--text-main-primary);
+}
+
+.team-member .name {
+  color: var(--text-main-primary);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+}
+
+.team-member .specialization {
+  margin-top: 10px;
+
+  font-size: 16px;
+  line-height: 1.19;
+}
+
+.team .team-list {
+  display: flex;
+}
+
+.team-list .team-member:not(:last-child){
+  margin-right: 30px;
+}
+
+.team-member .person {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+/* //Стили к футеру */
+/* /применение второго цвета к части логотипа в футере */
+.footer .logo-color {
+  color: var(--text-footer-logo);
+}
+.footer {
+  background-color: var(--background-hero-footer);
+  padding: 60px 0;
+}
+
+.footer-adress {
+  color: var(--text-footer-primary);
+  font-style: normal;
+}
+
+.footer-contacts .mail,
+.footer-contacts .phone {
+  color: var(--text-footer-secondary);
+}
+
+.footer-adress {
+  margin-top: 20px;
+}
+
+.footer-contacts {
+  margin-top: 9px;
+}
+
+.footer-adress .item:last-child{
+  margin-top: 9px;
+}
+
+/* // стили к странице портфолио */
+/* / стили к фильтру с кнопками */
+.filter-button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  background-color: var(--portfolio-button-background);
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  border-radius: 4px;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+  background-color: var(--main-hover-color);
+  color: var(--text-accent-secondary);
+}
+
+.portfolio .filter-list {
+  margin-bottom: 50px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio .btn-item:not(:first-child) {
+  margin-left: 8px;
+}
+
+.portfolio-card .card-description {
+  padding: 20px 24px;
+}
+
+/* /секция наши проекты */
+.portfolio-card {
+  flex-basis: calc(100% / 3 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+
+  background-color: var(--portfolio-card-background);
+}
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+
+  font-size: 16px;
+  line-height: 1.88;
+}
+.portfolio-card .title {
+  margin-bottom: 4px;
+
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: var(--text-main-primary);
+}
+
+.portfolio-list .card-description {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #eeeeee;
+  border-top: none;
+}
+
+/* временный стиль текузей страницы */
+.body .current {
+  color: var(--text-accent-primary);
+}
+/* /временные стили для границ элементов*/
+
+/* .per {
+  outline: 2px solid blue;
+}
+
+.it {
+  outline: 2px solid tomato;
+}
+
+.ch {
+  outline: 2px solid green;
+}  */
+
+/* //разметка*/
+.section {
+  padding: 94px 0;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
