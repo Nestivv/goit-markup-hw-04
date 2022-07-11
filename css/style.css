@@ -26,6 +26,10 @@
   --portfolio-button-background: #f5f4fa;
   --portfolio-card-border: #eeeeee;
   --portfolio-card-background: #fff;
+
+  /* /переменные для создания сетки */
+  --indent: 30px;
+  --quantity-items: 3;
 }
 .body {
   font-family: 'Roboto', sans-serif;
@@ -78,13 +82,13 @@ img {
 .footer a,
 .portfolio a {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
 
 /* /применяем общие шрифты к всему хедеру */
 .header {
-padding-top: 24px;
-padding-bottom: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 
   font-weight: 500;
   font-size: 14px;
@@ -133,7 +137,7 @@ padding-bottom: 24px;
   margin-left: 93px;
 }
 
-.pages-list .item:not(:last-child){
+.pages-list .item:not(:last-child) {
   margin-right: 50px;
 }
 .header-contacts {
@@ -213,20 +217,16 @@ padding-bottom: 24px;
   color: var(--text-main-primary);
 }
 
-.features .list {
-  display: flex;
-}
-
-.features .item:not(:first-child) {
-  margin-left: 30px;
-}
-
 .features .features-title {
   margin-bottom: 10px;
 }
 
-.features .item{
+.features .item {
   width: 270px;
+}
+
+.features-list {
+  --quantity-items: 4;
 }
 
 /* /стили к секции чем мы занимаемся */
@@ -237,14 +237,6 @@ padding-bottom: 24px;
   line-height: 1.17;
   text-align: center;
   color: var(--text-main-primary);
-}
-
-.our-description .description-list {
-  display: flex;
-}
-
-.description-list .item:not(:last-child){
-  margin-right: 30px;
 }
 
 .our-description {
@@ -282,18 +274,14 @@ padding-bottom: 24px;
   line-height: 1.19;
 }
 
-.team .team-list {
-  display: flex;
-}
-
-.team-list .team-member:not(:last-child){
-  margin-right: 30px;
-}
-
 .team-member .person {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
+}
+
+.team-list {
+  --quantity-items: 4;
 }
 /* //Стили к футеру */
 /* /применение второго цвета к части логотипа в футере */
@@ -323,7 +311,7 @@ padding-bottom: 24px;
   margin-top: 9px;
 }
 
-.footer-adress .item:last-child{
+.footer-adress .item:last-child {
   margin-top: 9px;
 }
 
@@ -363,19 +351,7 @@ padding-bottom: 24px;
 }
 
 /* /секция наши проекты */
-.portfolio-card {
-  flex-basis: calc(100% / 3 - 30px);
-  margin-left: 30px;
-  margin-top: 30px;
-
-  background-color: var(--portfolio-card-background);
-}
 .portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  margin-top: -30px;
-
   font-size: 16px;
   line-height: 1.88;
 }
@@ -395,25 +371,12 @@ padding-bottom: 24px;
   border-top: none;
 }
 
-/* временный стиль текузей страницы */
+/* временный стиль текущей страницы */
 .body .current {
   color: var(--text-accent-primary);
 }
-/* /временные стили для границ элементов*/
 
-/* .per {
-  outline: 2px solid blue;
-}
-
-.it {
-  outline: 2px solid tomato;
-}
-
-.ch {
-  outline: 2px solid green;
-}  */
-
-/* //разметка*/
+/* //разметка общие стили*/
 .section {
   padding: 94px 0;
 }
@@ -422,4 +385,14 @@ padding-bottom: 24px;
   width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+}
+
+.grid-item {
+  flex-basis: calc(100% - var(--indent) * (var(--quantity-items)-1)) / var(--quantity-items);
 }
