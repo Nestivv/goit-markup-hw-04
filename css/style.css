@@ -147,6 +147,27 @@ img {
   margin-left: 50px;
 }
 
+.header-contacts .item {
+  display: flex;
+}
+
+.header-contacts .icon-phone {
+  margin-right: 10px;
+  width: 10px;
+  height: 16px;
+}
+
+.phone,
+.mail {
+  display: flex;
+  align-items: center;
+}
+.header-contacts .icon-mail {
+  margin-right: 10px;
+  width: 16px;
+  height: 12px;
+}
+
 /* /прописываем наведение для ссылок */
 .page-link:hover,
 .header-contacts .mail:hover,
@@ -154,6 +175,7 @@ img {
 .footer-contacts .mail:hover,
 .footer-contacts .phone:hover {
   color: var(--main-hover-color);
+  fill: var(--main-hover-color);
 }
 
 .page-link:focus,
