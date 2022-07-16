@@ -13,7 +13,8 @@
   --text-header-logo: #000000;
 
   --background-main: #fff;
-  --background-hero-footer: #2f303a;
+  --background-footer: #2f303a;
+  --background-hero: #C4C4C4;
   --background-team: #f5f4fa;
   --background-hero-button: #2196f3;
   --background-hover-hero-button: #188ce8;
@@ -21,6 +22,8 @@
   --background-member-card: #fff;
 
   --border-color: #ececec;
+
+  --svg-color: #afb1b8;
 
   /* / цвета для страницы портфолио */
   --portfolio-button-background: #f5f4fa;
@@ -190,8 +193,15 @@ img {
 /* /описание секции герой */
 .hero {
   padding: 200px 0;
-  background-color: var(--background-hero-footer);
+  background-color: var(--background-hero);
   text-align: center;
+  background-image: linear-gradient(180deg, #2F303A66 0%, rgba(47, 48, 58, 0.4) 100%),url(../images/img-index/hero.jpg);
+  background-repeat: no-repeat;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
+
   /* height: 600px; */
 }
 
@@ -271,6 +281,8 @@ img {
 }
 .team .team-member {
   background-color: var(--background-member-card);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .team-title {
   margin-bottom: 50px;
@@ -291,6 +303,7 @@ img {
 
 .team-member .specialization {
   margin-top: 10px;
+  margin-bottom: 16px;
 
   font-size: 16px;
   line-height: 1.19;
@@ -305,13 +318,27 @@ img {
 .team-list {
   --quantity-items: 4;
 }
+
+/* /Стили наши клиенты */
+.customer-title {
+  margin-bottom: 50px;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--text-main-primary);
+}
+.customer-list {
+  display: flex;
+  gap: 30px;
+}
+
 /* //Стили к футеру */
 /* /применение второго цвета к части логотипа в футере */
 .footer .logo-color {
   color: var(--text-footer-logo);
 }
 .footer {
-  background-color: var(--background-hero-footer);
+  background-color: var(--background-footer);
   padding: 60px 0;
 }
 
@@ -336,6 +363,15 @@ img {
 .footer-adress .item:last-child {
   margin-top: 9px;
 }
+.join-title {
+  margin-bottom: 20px;
+  color: var(--text-accent-secondary);
+}
+
+.footer .container {
+  display: flex;
+  gap: 70px;
+}
 
 /* // стили к странице портфолио */
 /* / стили к фильтру с кнопками */
@@ -355,6 +391,8 @@ img {
 .filter-button:focus {
   background-color: var(--main-hover-color);
   color: var(--text-accent-secondary);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio .filter-list {
@@ -393,6 +431,11 @@ img {
   border-top: none;
 }
 
+.portfolio-card:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 /* временный стиль текущей страницы */
 .body .current {
   color: var(--text-accent-primary);
@@ -417,4 +460,84 @@ img {
 
 .grid-item {
   flex-basis: calc(100% - var(--indent) * (var(--quantity-items)-1)) / var(--quantity-items);
+}
+/* // стили к иконкам-логотипам */
+.features-icon {
+  width: 70px;
+  height: 70px;
+
+  display: block;
+}
+.features .icon-thumb {
+  padding: 25px 100px;
+  margin-bottom: 30px;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-social {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: var(--svg-color);
+}
+
+.icon-customer {
+  display: block;
+  width: 106px;
+  height: 60px;
+  fill: var(--svg-color);
+}
+
+.customer-link {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--svg-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.customer-link:hover,
+.customer-link:focus {
+  border: 1px solid var(--main-hover-color);
+}
+
+.customer-link:hover .icon-customer,
+.customer-link:focus .icon-customer {
+  fill: var(--main-hover-color);
+}
+
+.footer .social-link {
+  background: rgba(255, 255, 255, 0.1);
+}
+.footer .icon-social {
+  fill: var(--text-accent-secondary);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--main-hover-color);
+}
+
+.social-link:hover .icon-social,
+.social-link:focus .icon-social {
+  fill: var(--text-accent-secondary);
 }
